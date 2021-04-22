@@ -1,0 +1,44 @@
+﻿<Window x:Class="SnazzyWpfBorders.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SnazzyWpfBorders"
+        xmlns:c="clr-namespace:SnazzyWpfBorders.Components"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        ui:TitleBar.ExtendViewIntoTitleBar="True"
+        BorderThickness="0"
+        Background="Black"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!-- Controls giving different border animations -->
+        <c:BorderDash x:Name="BorderDash"></c:BorderDash>
+        <c:BorderTopDash x:Name="BorderTopDash" BColor="LightBlue" Duration="100"></c:BorderTopDash>
+        <c:BorderSides2 x:Name="BorderSides2" BColor="HotPink"></c:BorderSides2>
+        <c:BorderFade x:Name="BorderWarningFlash" BColor="Red" FadeInDuration="80" FadeOutDuration="80" FadeOutDelay="80"></c:BorderFade>
+        <c:BorderFade x:Name="BorderFade" BColor="White"></c:BorderFade>
+        <c:BorderLoop x:Name="BorderLoop" BColor="Yellow"></c:BorderLoop>
+        <c:BorderSides1 x:Name="BorderSides1"></c:BorderSides1>
+        
+        <!-- Place your windows contents within this grid -->
+        <Grid x:Name="WindowContents" Margin="1" Background="Black">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Click="LoopButtonClick" MinWidth="100" Margin="5">Loop</Button>
+                <StackPanel Orientation="Horizontal">
+                    <Button Click="Sides1ButtonClick" MinWidth="100" Margin="5">Sides1</Button>
+                    <Button Click="Sides2ButtonClick" MinWidth="100" Margin="5">Sides2</Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Click="FlashButtonClick" MinWidth="100" Margin="5">Flash</Button>
+                    <ToggleButton Click="WarningFlashToggleClick" MinWidth="100" Margin="5">Toggle Warning Flash</ToggleButton>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleButton Click="TopDashToggleClick" MinWidth="100" Margin="5">Top Dash</ToggleButton>
+                    <ToggleButton Click="DashToggleClick" MinWidth="100" Margin="5">Dash</ToggleButton>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

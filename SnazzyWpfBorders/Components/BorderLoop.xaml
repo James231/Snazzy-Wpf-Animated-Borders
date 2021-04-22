@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="SnazzyWpfBorders.Components.BorderLoop"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SnazzyWpfBorders.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             x:Name="LayoutRoot">
+    <Grid>
+        <Grid VerticalAlignment="Top" Height="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0" x:Name="TopEdgeCol1" />
+                <ColumnDefinition Width="*" x:Name="TopEdgeCol2"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="TopEdge" Grid.Column="0" Background="{Binding BColor, ElementName=LayoutRoot}">
+            </Grid>
+        </Grid>
+        <Grid VerticalAlignment="Bottom" Height="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" x:Name="BottomEdgeCol2" />
+                <ColumnDefinition Width="0" x:Name="BottomEdgeCol1"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="BottomEdge" Grid.Column="1" Background="{Binding BColor, ElementName=LayoutRoot}">
+            </Grid>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Width="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" x:Name="LeftEdgeCol2" />
+                <RowDefinition Height="0" x:Name="LeftEdgeCol1"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="LeftEdge" Grid.Row="1" Background="{Binding BColor, ElementName=LayoutRoot}">
+            </Grid>
+        </Grid>
+        <Grid HorizontalAlignment="Right" Width="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0" x:Name="RightEdgeCol1" />
+                <RowDefinition Height="*" x:Name="RightEdgeCol2"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="RightEdge" Grid.Row="0" Background="{Binding BColor, ElementName=LayoutRoot}">
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

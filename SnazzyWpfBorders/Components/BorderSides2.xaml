@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="SnazzyWpfBorders.Components.BorderSides2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SnazzyWpfBorders.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" x:Name="LayoutRoot">
+    <Grid>
+        <Grid Height="1" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" x:Name="TopShrink1"/>
+                <ColumnDefinition Width="0" x:Name="TopExpand"/>
+                <ColumnDefinition Width="*" x:Name="TopShrink2"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="TopEdge" Grid.Column="1" Background="{Binding BColor, ElementName=LayoutRoot}"></Grid>
+        </Grid>
+        <Grid Height="1" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" x:Name="BottomShrink1"/>
+                <ColumnDefinition Width="0" x:Name="BottomExpand"/>
+                <ColumnDefinition Width="*" x:Name="BottomShrink2"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="BottomEdge" Grid.Column="1" Background="{Binding BColor, ElementName=LayoutRoot}"></Grid>
+        </Grid>
+        <Grid Width="1" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" x:Name="LeftShrink1"/>
+                <RowDefinition Height="0" x:Name="LeftExpand"/>
+                <RowDefinition Height="*" x:Name="LeftShrink2"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="LeftEdge" Grid.Row="1" Background="{Binding BColor, ElementName=LayoutRoot}"></Grid>
+        </Grid>
+        <Grid Width="1" HorizontalAlignment="Right">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" x:Name="RightShrink1"/>
+                <RowDefinition Height="0" x:Name="RightExpand"/>
+                <RowDefinition Height="*" x:Name="RightShrink2"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="RightEdge" Grid.Row="1" Background="{Binding BColor, ElementName=LayoutRoot}"></Grid>
+        </Grid>
+    </Grid>
+</UserControl>
